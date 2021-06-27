@@ -28,6 +28,23 @@ class _QueryPageState extends State<QueryPage> {
           ),
           RaisedButton(
             onPressed: () {
+              showDialog(
+                context: context,
+                barrierDismissible: false,
+                builder: (BuildContext context) {
+                  return WillPopScope(
+                    onWillPop: () async => false,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        CircularProgressIndicator(
+                          strokeWidth: 8,
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
               getData(
                 vehicleId: vehicleId,
               ).then((value) {
@@ -35,6 +52,7 @@ class _QueryPageState extends State<QueryPage> {
                   vehicleRaw = json.decode(value);
                 });
                 print(vehicleRaw);
+                Navigator.pop(context);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
