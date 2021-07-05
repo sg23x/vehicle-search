@@ -10,10 +10,12 @@ class ResultPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(vehicleRawResponse['license_plate']),
       ),
-      body: Column(
+      body: ListView(
         // mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(
+            height: 10,
+          ),
           // Text(
           //   'plate number: ' + vehicleRawResponse['license_plate'],
           // ),
@@ -44,7 +46,8 @@ class ResultPage extends StatelessWidget {
           // Text(
           //   'engine number: ' + vehicleRawResponse['engine_number'],
           // ),
-          InfoTile(),
+          InfoTile(), InfoTile(), InfoTile(), InfoTile(), InfoTile(),
+          InfoTile(), InfoTile(),
         ],
       ),
     );

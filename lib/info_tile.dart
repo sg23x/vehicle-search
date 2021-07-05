@@ -10,7 +10,7 @@ class InfoTile extends StatelessWidget {
         minHeight: MediaQuery.of(context).size.height * 0.15,
       ),
       child: Container(
-        margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+        margin: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           border: Border.all(width: 5, color: Colors.grey),
