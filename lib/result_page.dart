@@ -8,7 +8,12 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(vehicleRawResponse['license_plate']),
+        title: Text(
+          vehicleRawResponse['license_plate'],
+          style: TextStyle(
+            fontFamily: 'Montserrat',
+          ),
+        ),
       ),
       body: ListView(
         // mainAxisAlignment: MainAxisAlignment.center,
