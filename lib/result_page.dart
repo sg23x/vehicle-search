@@ -21,38 +21,49 @@ class ResultPage extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          // Text(
-          //   'plate number: ' + vehicleRawResponse['license_plate'],
-          // ),
-          // Text(
-          //   'owner: ' + vehicleRawResponse['owner_name'],
-          // ),
-          // Text(
-          //   'class: ' + vehicleRawResponse['class'],
-          // ),
-          // Text(
-          //   'brand: ' + vehicleRawResponse['brand_name'],
-          // ),
-          // Text(
-          //   'model: ' + vehicleRawResponse['brand_model'],
-          // ),
-          // Text(
-          //   'fuel type: ' + vehicleRawResponse['fuel_type'],
-          // ),
-          // Text(
-          //   'rto: ' + vehicleRawResponse['rto'],
-          // ),
-          // Text(
-          //   'registration date: ' + vehicleRawResponse['registration_date'],
-          // ),
-          // Text(
-          //   'insurance expiry: ' + vehicleRawResponse['insurance_expiry'],
-          // ),
-          // Text(
-          //   'engine number: ' + vehicleRawResponse['engine_number'],
-          // ),
-          InfoTile(), InfoTile(), InfoTile(), InfoTile(), InfoTile(),
-          InfoTile(), InfoTile(),
+          InfoTile(
+            title: "License Plate Number",
+            response: vehicleRawResponse["license_plate"],
+          ),
+          InfoTile(
+            title: "Owner Name",
+            response: vehicleRawResponse["owner_name"],
+          ),
+          InfoTile(
+            title: "Brand",
+            response: vehicleRawResponse["brand_name"],
+          ),
+          vehicleRawResponse["brand_model"] != null &&
+                  vehicleRawResponse["brand_model"].toString().trim() != ""
+              ? InfoTile(
+                  title: "Model",
+                  response: vehicleRawResponse["brand_model"],
+                )
+              : SizedBox(),
+          vehicleRawResponse["fuel_type"] != null &&
+                  vehicleRawResponse["fuel_type"].toString().trim() != ""
+              ? InfoTile(
+                  title: "Fuel Type",
+                  response: vehicleRawResponse["fuel_type"],
+                )
+              : SizedBox(),
+          InfoTile(
+            title: "RTO",
+            response:
+                vehicleRawResponse["rto"] + ", " + vehicleRawResponse["state"],
+          ),
+          InfoTile(
+            title: "Registration Date",
+            response: vehicleRawResponse["registration_date"],
+          ),
+          InfoTile(
+            title: "Vehicle age",
+            response: vehicleRawResponse["registration_date"],
+          ),
+          InfoTile(
+            title: "Insurance Expiry",
+            response: vehicleRawResponse["insurance_expiry"],
+          ),
         ],
       ),
     );
